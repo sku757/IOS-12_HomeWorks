@@ -123,19 +123,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ru-89-vrk">
-                                <rect key="frame" x="171" y="433" width="72" height="30"/>
-                                <state key="normal" title="Open post"/>
-                                <connections>
-                                    <segue destination="Gpo-I4-SnC" kind="show" identifier="post" id="2l2-zd-PhO"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XLh-cb-ET7">
+                                <rect key="frame" x="50" y="382.66666666666669" width="314" height="130.66666666666669"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Просмотреть" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6HF-55-138">
+                                        <rect key="frame" x="103.66666666666666" y="0.0" width="106.66666666666666" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemIndigoColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пост" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1Z-BP-flH">
+                                        <rect key="frame" x="137.66666666666666" y="30.333333333333314" width="39" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemIndigoColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLU-ds-THP">
+                                        <rect key="frame" x="134" y="60.666666666666629" width="46" height="30"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" systemColor="systemBlueColor"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Gpo-I4-SnC" kind="push" id="icR-3q-XVC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSY-Rg-5Wy">
+                                        <rect key="frame" x="134" y="100.66666666666663" width="46" height="30"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" systemColor="systemBlueColor"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Gpo-I4-SnC" kind="push" id="4TK-yR-BUr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="tintColor" systemColor="systemPinkColor"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rDk-lR-Mb7"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
-                            <constraint firstItem="9ru-89-vrk" firstAttribute="centerX" secondItem="hnQ-fB-PJI" secondAttribute="centerX" id="ojZ-LA-9mf"/>
-                            <constraint firstItem="9ru-89-vrk" firstAttribute="centerY" secondItem="hnQ-fB-PJI" secondAttribute="centerY" id="z24-rS-igo"/>
+                            <constraint firstItem="XLh-cb-ET7" firstAttribute="leading" secondItem="rDk-lR-Mb7" secondAttribute="leading" constant="50" id="2Da-Th-oYJ"/>
+                            <constraint firstItem="XLh-cb-ET7" firstAttribute="centerY" secondItem="hnQ-fB-PJI" secondAttribute="centerY" id="8h2-OX-ztv"/>
+                            <constraint firstItem="XLh-cb-ET7" firstAttribute="centerX" secondItem="hnQ-fB-PJI" secondAttribute="centerX" id="JCK-Q1-ca0"/>
+                            <constraint firstItem="rDk-lR-Mb7" firstAttribute="trailing" secondItem="XLh-cb-ET7" secondAttribute="trailing" constant="50" id="pEN-Xp-9xX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Feed" id="CTA-33-ygc"/>
@@ -232,10 +263,16 @@
             <point key="canvasLocation" x="-142.02898550724638" y="196.875"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="icR-3q-XVC"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="11" width="404" height="428"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

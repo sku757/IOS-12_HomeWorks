@@ -9,7 +9,7 @@
 import UIKit
 
 class ProfileHeaderView: UIView {
-//    private var statusText = UITextField()
+    //    private var statusText = UITextField()
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var label1: UILabel!
@@ -63,10 +63,6 @@ class ProfileHeaderView: UIView {
     }
     }
     
-    func UI() {
-        
-}
-
 ////    private let button = UIButton()
 ////    private var image = UIImageView()
 ////    private let label = UILabel()
