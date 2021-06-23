@@ -15,13 +15,16 @@ class ProfileHeaderView: UIView {
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var textfield: UITextField!
     @IBOutlet weak var button: UIButton!
+    
     override func awakeFromNib() {
+       configureView()
+    }
+    
+    func configureView(){
         image.layer.cornerRadius = image.frame.size.width/2
         image.layer.borderWidth = 3
         image.layer.borderColor = UIColor.white.cgColor
         image.clipsToBounds = true
-
-        
         button.setTitle("Set status", for: .normal)
         button.addTarget(self, action: #selector(doButton), for: .touchUpInside)
         button.layer.cornerRadius = 8
@@ -40,14 +43,13 @@ class ProfileHeaderView: UIView {
         label1.textColor = .white
         label1.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         addSubview(label1)
-        textfield.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textfield.frame.height))
-                    textfield.leftViewMode = .always
-                    textfield.font = UIFont.systemFont(ofSize: 15, weight: .regular)
-                    textfield.textColor = .black
-                    textfield.backgroundColor = .white
-                    textfield.layer.borderWidth = 1.0
-                    textfield.layer.borderColor = UIColor.black.cgColor
-                    textfield.layer.cornerRadius = 12
+        textfield.leftViewMode = .always
+        textfield.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        textfield.textColor = .black
+        textfield.backgroundColor = .white
+        textfield.layer.borderWidth = 1.0
+        textfield.layer.borderColor = UIColor.black.cgColor
+        textfield.layer.cornerRadius = 12
         textfield.text = "Статус...."
         textfield.addTarget(self, action: #selector(statusTextChanged), for: .editingChanged)
         addSubview(textfield)
@@ -62,6 +64,8 @@ class ProfileHeaderView: UIView {
         label1.text = textfield.text
     }
     }
+    
+
     
 ////    private let button = UIButton()
 ////    private var image = UIImageView()

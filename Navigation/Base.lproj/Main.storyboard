@@ -38,13 +38,19 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Текст текст" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4j3-xv-nEf">
-                                        <rect key="frame" x="150" y="27" width="92" height="21"/>
+                                        <rect key="frame" x="150" y="27" width="150" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="6Mq-jJ-XZe"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Текст текст" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnz-vS-wgi">
-                                        <rect key="frame" x="150" y="75" width="92" height="21"/>
+                                        <rect key="frame" x="150" y="75" width="150" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="hK1-bE-0NG"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -64,6 +70,8 @@
                                     <constraint firstItem="4j3-xv-nEf" firstAttribute="leading" secondItem="pnz-vS-wgi" secondAttribute="leading" id="BlK-Eu-ZKx"/>
                                     <constraint firstItem="xAh-He-JG7" firstAttribute="top" secondItem="bbi-lg-WPp" secondAttribute="bottom" constant="32" id="BwF-mU-qNl"/>
                                     <constraint firstItem="4j3-xv-nEf" firstAttribute="leading" secondItem="bbi-lg-WPp" secondAttribute="trailing" constant="24" id="ORN-Ok-b3u"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4j3-xv-nEf" secondAttribute="trailing" constant="20" symbolic="YES" id="PMD-yE-nYN"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pnz-vS-wgi" secondAttribute="trailing" constant="20" symbolic="YES" id="YRA-sc-dRG"/>
                                     <constraint firstItem="xAh-He-JG7" firstAttribute="top" secondItem="bbi-lg-WPp" secondAttribute="bottom" constant="32" id="Zhy-EI-ulH"/>
                                     <constraint firstItem="xAh-He-JG7" firstAttribute="leading" secondItem="5YH-nB-Vg7" secondAttribute="leading" constant="16" id="c5d-zc-dZI"/>
                                     <constraint firstAttribute="trailing" secondItem="MkU-wk-1r9" secondAttribute="trailing" constant="98" id="fWr-c7-ubw"/>
@@ -88,8 +96,6 @@
                             <constraint firstItem="5YH-nB-Vg7" firstAttribute="leading" secondItem="FCL-IZ-fe8" secondAttribute="leading" id="79K-4j-37B"/>
                             <constraint firstItem="5YH-nB-Vg7" firstAttribute="top" secondItem="FCL-IZ-fe8" secondAttribute="top" id="DFE-OK-usV"/>
                             <constraint firstItem="FCL-IZ-fe8" firstAttribute="trailing" secondItem="5YH-nB-Vg7" secondAttribute="trailing" id="e9e-XT-Enj"/>
-                            <constraint firstItem="5YH-nB-Vg7" firstAttribute="top" secondItem="FCL-IZ-fe8" secondAttribute="top" id="qIt-i0-jaF"/>
-                            <constraint firstItem="5YH-nB-Vg7" firstAttribute="top" secondItem="FCL-IZ-fe8" secondAttribute="top" id="rRl-xy-ntp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="TPi-FS-zh0"/>
