@@ -69,7 +69,7 @@ class LogInViewController: UIViewController {
              return textField
          }()
 
-         private lazy var logInButton: UIButton = {
+         private var logInButton: UIButton = {
              let button = UIButton(type: .system)
              button.setTitle("Log in", for: .normal)
              button.setTitleColor(.white, for: .normal)
@@ -111,14 +111,14 @@ class LogInViewController: UIViewController {
             autorizationView.addSubview(passwordTextField)
             view.addSubview(logInButton)
             let constraints = [
-                logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 120),
-                logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                logoImageView.topAnchor.constraint(equalTo: logInView.topAnchor, constant: 120),
+                logoImageView.centerXAnchor.constraint(equalTo: logInView.centerXAnchor),
                 logoImageView.widthAnchor.constraint(equalToConstant: 100),
                 logoImageView.heightAnchor.constraint(equalToConstant: 100),
 
                 autorizationView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 120),
-                autorizationView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-                autorizationView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+                autorizationView.leadingAnchor.constraint(equalTo: logInView.leadingAnchor, constant: 16),
+                autorizationView.trailingAnchor.constraint(equalTo: logInView.trailingAnchor, constant: -16),
                 autorizationView.heightAnchor.constraint(equalToConstant: 100),
 
                 emailTextField.topAnchor.constraint(equalTo: autorizationView.topAnchor),
@@ -132,8 +132,9 @@ class LogInViewController: UIViewController {
                 passwordTextField.heightAnchor.constraint(equalToConstant: 49.7),
 
                 logInButton.topAnchor.constraint(equalTo: autorizationView.bottomAnchor, constant: 16),
-                logInButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-                logInButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+                logInButton.leadingAnchor.constraint(equalTo: logInView.leadingAnchor, constant: 16),
+                logInButton.trailingAnchor.constraint(equalTo: logInView.trailingAnchor, constant: -16),
+                logInButton.bottomAnchor.constraint(equalTo: logInView.bottomAnchor),
                 logInButton.heightAnchor.constraint(equalToConstant: 50),
                 scrollView.topAnchor.constraint(equalTo: view.topAnchor),
                 scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
