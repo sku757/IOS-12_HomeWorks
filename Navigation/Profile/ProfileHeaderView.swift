@@ -15,6 +15,7 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
 //    @IBOutlet weak var label1: UILabel!
 //    @IBOutlet weak var textfield: UITextField!
 //    @IBOutlet weak var button: UIButton!
+    // static let reuseID = String(describing: ProfileHeaderView.self)
     
     private let userImage: UIImageView = {
         var image = UIImageView(image: #imageLiteral(resourceName: "22"))
@@ -101,7 +102,6 @@ class ProfileHeaderView: UITableViewHeaderFooterView {
             
             userLabelTwo.leadingAnchor.constraint(equalTo: userImage.trailingAnchor, constant: 16),
             userLabelTwo.bottomAnchor.constraint(equalTo: userTextField.topAnchor, constant: -20),
-            userLabelTwo.heightAnchor.constraint(equalToConstant: 14),
 
                      userButton.topAnchor.constraint(equalTo: userImage.bottomAnchor, constant: 32),
                      userButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),

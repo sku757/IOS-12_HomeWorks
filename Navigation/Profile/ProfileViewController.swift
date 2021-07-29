@@ -13,6 +13,7 @@ class ProfileViewController: UIViewController{
     
     private let tableView = UITableView(frame: .zero, style: .grouped)
     private let cellId = "cellId"
+    private let cellIdTwo = "cellId"
       
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -30,7 +31,8 @@ class ProfileViewController: UIViewController{
              tableView.toAutoLayout()
              tableView.dataSource = self
              tableView.delegate = self
-             tableView.register(PostTableViewCell.self, forCellReuseIdentifier: cellId)
+            tableView.register(PostTableViewCell.self, forCellReuseIdentifier: String(describing:PostTableViewCell.self))
+            tableView.register(PhotosTableViewCell.self, forCellReuseIdentifier: String(describing:PhotosTableViewCell.self))
 //            tableView.register(ProfileHeaderView.self, forHeaderFooterViewReuseIdentifier: ProfileHeaderView.reuseid)
 
              let constraints = [
@@ -48,17 +50,39 @@ class ProfileViewController: UIViewController{
      // MARK: UITableViewDataSource
 
      extension ProfileViewController: UITableViewDataSource {
+        
+        func numberOfSections(in tableView: UITableView) -> Int {
+            2
+        }
+        
          func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-             return PostStorage.postArray.count
+          
+            switch section {
+            case 0:
+                return 1
+            default:
+                return PostStorage.postArray.count
+            }
+            
          }
 
          func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-             let cell: PostTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! PostTableViewCell
+            switch indexPath.section{
 
-             cell.post = PostStorage.postArray[indexPath.row]
-
-             return cell
+            case 0:
+                let photoCell:PhotosTableViewCell = tableView.dequeueReusableCell(withIdentifier: String(describing:PhotosTableViewCell.self), for: indexPath) as! PhotosTableViewCell
+                return photoCell
+            default:
+                let cell: PostTableViewCell = tableView.dequeueReusableCell(withIdentifier: String(describing:PostTableViewCell.self), for: indexPath) as! PostTableViewCell
+                cell.post = PostStorage.postArray[indexPath.row]
+                return cell
+            }
+            
+//             let cell: PostTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! PostTableViewCell
+//             cell.post = PostStorage.postArray[indexPath.row]
+//
+//             return cell
          }
 
          func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -67,14 +91,29 @@ class ProfileViewController: UIViewController{
 //        func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 //            return "BMW"
 //        }
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            tableView.deselectRow(at: indexPath, animated: true)
+            let car = PostStorage.postArray[indexPath.row]
+            print(car.likes)
+            
+            if indexPath.section == 0 {
+                let d = PhotosViewController()
+                navigationController?.pushViewController(d, animated: true)
+            }
+        }
      }
 
 // MARK: Delegate
 
     extension ProfileViewController:UITableViewDelegate{
         func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-            let headerview = ProfileHeaderView()
-            return headerview
+            switch section {
+            case 0:
+                let header = ProfileHeaderView()
+                return header
+            default:
+                return nil
+            }
         }
         
 //        func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
